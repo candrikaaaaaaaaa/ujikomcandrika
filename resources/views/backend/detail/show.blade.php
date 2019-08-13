@@ -37,7 +37,7 @@
                                     </tr>
 
             @endforeach
-        </tbody>
+        <!-- </tbody>
         </table>
     </div>
     <script>
@@ -76,5 +76,5 @@
                var nama_tag = $('.nama_tag').val();
            })
         })
-    </script>
+    </script> -->
     @endsection
