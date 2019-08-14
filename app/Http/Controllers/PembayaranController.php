@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pendaftaran;
 
-class PendaftaranController extends Controller
+class PembayaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        $pendaftaran = Pendaftaran::all();
-        return view('backend.pendaftaran.index', compact('pendaftaran'));
+        //
     }
 
     /**
@@ -25,11 +23,7 @@ class PendaftaranController extends Controller
      */
     public function create()
     {
-        $dokter = Dokter::all();
-        $pasien = Pasien::all();
-        $poliklinik = Poliklinik::all();
-        return view('pendaftaran.create', compact('dokter', 'pasien', 'poliklinik'));
-
+        //
     }
 
     /**
@@ -40,17 +34,7 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        $pendaftaran = new Pendaftaran;
-        $pendaftaran->No_pendaftaran = $request->No_pendaftaran;
-        $pendaftaran->tanggal_pendaftaran = $request->tanggal_pendaftaran;
-        $pendaftaran->kode_dokter = $request->kode_dokter;
-        $pendaftaran->kode_pasien = $request->kode_pasien;
-        $pendaftaran->kode_klinik = $request->kode_klinik;
-        $pendaftaran->Biaya = $request->Biaya;
-        $pendaftaran->keterangan = $request->keterangan;
-        $artikel->save();
-    
-        return redirect()->route('pendaftaran.index');
+        //
     }
 
     /**
