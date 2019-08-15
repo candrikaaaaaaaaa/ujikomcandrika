@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pendaftaran;
+use App\Dokter;
+use App\Pasien;
+use App\Poliklinik;
 
 class DokterController extends Controller
 {
@@ -13,7 +17,8 @@ class DokterController extends Controller
      */
     public function index()
     {
-        //
+        $dokter = Dokter::all();
+        return view('backend.dokter.index', compact('dokter'));
     }
 
     /**
@@ -23,7 +28,8 @@ class DokterController extends Controller
      */
     public function create()
     {
-        //
+        $poliklinik = Poliklinik::all();
+        return view('backend.dokter.create', compact('poloklinik'));
     }
 
     /**
@@ -34,7 +40,18 @@ class DokterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dokter = new Dokter();
+        $dokter->kode_dokter = $request->kode_dokter;
+        $dokter->nama_dokter = $request->nama_dokter;
+        $dokter->spesialis = $request->spesialis;
+        $dokter->Alamat_dokter = $request->Alamat_dokter;
+        $dokter->tlp_dokter = $request->tlp_dokter;
+        $dokter->kode_klinik = $request->kode_klinik;
+        $dokter->Tarif = $request->Tarif;
+
+        $dokter->save();
+    
+        return redirect()->route('dokter.index');
     }
 
     /**

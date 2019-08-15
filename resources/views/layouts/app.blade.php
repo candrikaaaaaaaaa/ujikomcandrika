@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body background="{{asset('awal.jpg') }}" id="bg" alt="" style="position:fixed; top:0; left:0; min-width:100%; min-height:100%;">
+<body background = "{{ asset('awal.jpg') }}">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
