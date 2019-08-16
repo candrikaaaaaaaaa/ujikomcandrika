@@ -17,8 +17,10 @@ class DokterController extends Controller
      */
     public function index()
     {
+        $pendaftaran = Pendaftaran::all();
         $dokter = Dokter::all();
-        return view('backend.dokter.index', compact('dokter'));
+        $poliklinik = Poliklinik::all();
+        return view('backend.dokter.index', compact('pendaftaran', 'poliklinik', 'dokter'));
     }
 
     /**
@@ -28,8 +30,8 @@ class DokterController extends Controller
      */
     public function create()
     {
-        $poliklinik = Poliklinik::all();
-        return view('backend.dokter.create', compact('poloklinik'));
+        $pendaftaran = Pendaftaran::all();
+        return view('backend.dokter.create', compact('pendaftaran'));
     }
 
     /**
@@ -62,7 +64,9 @@ class DokterController extends Controller
      */
     public function show($id)
     {
-        //
+        $dokter = Dokter::findOrFail($id);
+        return view('dokter.show', compact('dokter'));
+
     }
 
     /**
@@ -73,7 +77,8 @@ class DokterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dokter = Dokter::findOrFail($id);
+        return view('backend.dokter.edit', compact('dokter'));
     }
 
     /**
@@ -85,7 +90,18 @@ class DokterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dokter = Dokter::findOrFail($id);
+        $dokter->kode_dokter = $request->kode_dokter;
+        $dokter->nama_dokter = $request->nama_dokter;
+        $dokter->spesialis = $request->spesialis;
+        $dokter->Alamat_dokter = $request->Alamat_dokter;
+        $dokter->tlp_dokter = $request->tlp_dokter;
+        $dokter->kode_klinik = $request->kode_klinik;
+        $dokter->Tarif = $request->Tarif;
+
+        $dokter->save();
+    
+        return redirect()->route('dokter.index');
     }
 
     /**
@@ -96,6 +112,8 @@ class DokterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dokter = Dokter::findOrFail($id);
+        $dokter->delete();
+        return redirect()->route('dokter.index');
     }
 }

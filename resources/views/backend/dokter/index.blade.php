@@ -12,7 +12,7 @@
                                         <th scope="col">Nama Dokter</th>
 										<th scope="col">Spesialis</th>
 										<th scope="col">Alamat Dokter</th>
-										<th scope="col">Telepon Dokter</th>
+
 										<th scope="col">Kode Poliklinik</th>
                                         <th scope="col">Tarif</th>
                                         <th colspan="2" class="text-center">Aksi</th>
@@ -26,7 +26,7 @@
 										<td>{{ $data->nama_dokter }}</td>
 										<td>{{ $data->spesialis}}</td>
 										<td>{{ $data->Alamat_dokter}}</td>
-										<td>{{ $data->tlp_dokter}}</td>
+                                        
 										<td>{{ $data->kode_klinik}}</td>
 										<td>{{ $data->Tarif}}</td>
                                     

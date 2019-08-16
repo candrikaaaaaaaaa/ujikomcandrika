@@ -8,9 +8,11 @@
             @csrf
             <div class="form-group">
 							<label class="control-label col-lg-4">Kode Pasien</label>
-							<div class="col-lg-4">
-								<input type="text" name="kode_pasien" autofocus required class="form-control" />
-							</div>
+							<select name="kode_pasien" class="form-control">
+                  @foreach($pendaftaran as $data)
+                    <option value="{{ $data->id }}">{{ $data->kode_pasien }}</option>
+                  @endforeach
+                </select>
 						</div>
 						<div class="form-group">
 						<label class="control-label col-lg-4">Nama Pasien</label>

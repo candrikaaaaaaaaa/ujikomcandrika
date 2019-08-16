@@ -8,7 +8,7 @@
        <table class ="table table-hover table-dark">
             <thead>
                 <tr>
-                                        <th scope="col">No Resep</th>
+                                        <th scope="col">No Pendaftaran</th>
                                         <th scope="col">Tanggal Pendaftaran</th>
 										<th scope="col">Kode Dokter</th>
 										<th scope="col">Kode Pasien</th>
